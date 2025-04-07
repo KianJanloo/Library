@@ -6,15 +6,7 @@
       "author": "James Clear",
       "image": "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg",
       "describe": "An easy & proven way to build good habits and break bad ones.",
-      "price": "$16.20"
-    },
-    {
-      "id": "2",
-      "name": "The Alchemist",
-      "author": "Paulo Coelho",
-      "image": "https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg",
-      "describe": "A novel about the journey of a young Andalusian shepherd in his quest for treasure.",
-      "price": "$12.50"
+      "price": 16
     },
     {
       "id": "3",
@@ -22,7 +14,7 @@
       "author": "Cal Newport",
       "image": "https://m.media-amazon.com/images/I/71g2ednj0JL.jpg",
       "describe": "Rules for focused success in a distracted world.",
-      "price": "$14.80"
+      "price": 14
     },
     {
       "id": "4",
@@ -30,7 +22,7 @@
       "author": "David Goggins",
       "image": "https://m.media-amazon.com/images/I/81o1oy0y9eL.jpg",
       "describe": "Master Your Mind and Defy the Odds by a former Navy SEAL.",
-      "price": "$19.99"
+      "price": 19
     },
     {
       "id": "5",
@@ -38,7 +30,7 @@
       "author": "Tara Westover",
       "image": "https://m.media-amazon.com/images/I/81WojUxbbFL.jpg",
       "describe": "A memoir about a woman who was kept out of school and leaves her survivalist family to go on to earn a PhD.",
-      "price": "$13.45"
+      "price": 13
     },
     {
       "id": "6",
@@ -46,7 +38,7 @@
       "author": "Yuval Noah Harari",
       "image": "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg",
       "describe": "A brief history of humankind — from evolution to modern civilization.",
-      "price": "$17.00"
+      "price": 17
     },
     {
       "id": "7",
@@ -54,7 +46,7 @@
       "author": "Mark Manson",
       "image": "https://m.media-amazon.com/images/I/71QKQ9mwV7L.jpg",
       "describe": "A counterintuitive approach to living a good life.",
-      "price": "$11.85"
+      "price": 11
     },
     {
       "id": "8",
@@ -62,7 +54,7 @@
       "author": "Morgan Housel",
       "image": "https://m.media-amazon.com/images/I/71g2ednj0JL._AC_UF1000,1000_QL80_.jpg",
       "describe": "Timeless lessons on wealth, greed, and happiness.",
-      "price": "$18.75"
+      "price": 18
     },
     {
       "id": "9",
@@ -70,7 +62,7 @@
       "author": "Robert T. Kiyosaki",
       "image": "https://m.media-amazon.com/images/I/81BE7eeKzAL.jpg",
       "describe": "What the rich teach their kids about money that the poor and middle class do not!",
-      "price": "$10.99"
+      "price": 5
     },
     {
       "id": "10",
@@ -78,23 +70,7 @@
       "author": "George Orwell",
       "image": "https://m.media-amazon.com/images/I/71kxa1-0mfL.jpg",
       "describe": "A dystopian novel about a totalitarian regime that uses surveillance to control its people.",
-      "price": "$9.99"
-    },
-    {
-      "id": "11",
-      "name": "Brave New World",
-      "author": "Aldous Huxley",
-      "image": "https://m.media-amazon.com/images/I/81n5GfzTfXL.jpg",
-      "describe": "A futuristic society that sacrifices individuality for social stability.",
-      "price": "$13.20"
-    },
-    {
-      "id": "12",
-      "name": "Thinking, Fast and Slow",
-      "author": "Daniel Kahneman",
-      "image": "https://m.media-amazon.com/images/I/71w3k5SH-QL.jpg",
-      "describe": "Explores how we think, the biases we have, and how they affect decision making.",
-      "price": "$15.99"
+      "price": 33
     },
     {
       "id": "13",
@@ -102,7 +78,7 @@
       "author": "Viktor E. Frankl",
       "image": "https://m.media-amazon.com/images/I/81WcnNQ-TBL.jpg",
       "describe": "A Holocaust survivor's lessons on finding purpose in the midst of suffering.",
-      "price": "$9.50"
+      "price": 21
     },
     {
       "id": "14",
@@ -110,7 +86,7 @@
       "author": "Simon Sinek",
       "image": "https://m.media-amazon.com/images/I/71HMyqG6MRL.jpg",
       "describe": "How great leaders inspire everyone to take action.",
-      "price": "$14.00"
+      "price": 16
     },
     {
       "id": "15",
@@ -118,7 +94,7 @@
       "author": "Eckhart Tolle",
       "image": "https://m.media-amazon.com/images/I/81IrsLz1Z8L.jpg",
       "describe": "A guide to spiritual enlightenment through living in the present moment.",
-      "price": "$13.75"
+      "price": 8
     }
   ]
 }

@@ -1,17 +1,18 @@
-import React from 'react'
-import Navbar from './Navbar';
+import React from "react";
+import Navbar from "./Navbar";
+import { CartProvider } from "@/context/ContextCart";
 
 const Layout = ({
-    children,
-  }: Readonly<{
-    children: React.ReactNode;
-  }>) => {
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) => {
   return (
     <div>
       <Navbar />
-      {children}
+      <CartProvider>{children}</CartProvider>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

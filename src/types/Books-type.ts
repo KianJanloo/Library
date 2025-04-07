@@ -4,5 +4,5 @@ export interface IBooks {
   author: string;
   image: string;
   describe: string;
-  price: string;
+  price: number;
 }

@@ -1,14 +1,17 @@
 import React, { FC } from "react";
 import { IBooks } from "@/types/Books-type";
 import axios from "axios";
+import ButtonDeleteBook from "@/components/ButtonDeleteBook";
+import ButtonAddToCart from "@/components/ButtonAddToCart";
 
 interface IProps {
-    params: Promise<{ id: string }>,
+  params: Promise<{ id: string }>;
 }
 
 const BookInfo: FC<IProps> = async ({ params }) => {
-
-  const response = await axios(`http://localhost:8000/Books/${(await params).id}`);
+  const response = await axios(
+    `http://localhost:8000/Books/${(await params).id}`
+  );
   const book = response.data as IBooks;
 
   return (
@@ -25,8 +28,8 @@ const BookInfo: FC<IProps> = async ({ params }) => {
         <span className="text-lg font-semibold text-green-600">
           {book.price}
         </span>
-        <button className="bg-green-500 text-white rounded-full px-4 py-1 cursor-pointer mt-2 hover:scale-[1.02] transition-all duration-300"> Add to cart </button>
-        <button className="bg-red-500 text-white rounded-full px-4 py-1 cursor-pointer mt-2 hover:scale-[1.02] transition-all duration-300"> Delete </button>
+        <ButtonAddToCart book={book} />
+        <ButtonDeleteBook id={(await params).id} />
       </div>
     </div>
   );
