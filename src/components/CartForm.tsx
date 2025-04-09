@@ -22,7 +22,6 @@ const CartItemCard = ({ item, onRemove, onIncrease, onDecrease }: Props) => {
       <div className="flex-1">
         <h2 className="text-xl font-bold">{item.name}</h2>
         <p className="text-sm text-gray-400">{item.describe}</p>
-        <p className="text-sm mt-1">Author: <span className="text-gray-300">{item.author}</span></p>
         <p className="text-lg text-green-400 mt-2 font-semibold">{item.price.toLocaleString()}$</p>
       </div>
 

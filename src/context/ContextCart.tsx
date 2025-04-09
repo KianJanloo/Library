@@ -1,4 +1,5 @@
 "use client";
+import { IUsers } from "@/types/User-type";
 import { createContext, useState, ReactNode, useEffect } from "react";
 
 type CartItem = {
@@ -6,9 +7,10 @@ type CartItem = {
   name: string;
   price: number;
   describe: string;
-  author: string;
+  authorId: number;
+  author: IUsers;
   qty: number;
-};
+}
 
 type CartContextType = {
   cart: CartItem[];

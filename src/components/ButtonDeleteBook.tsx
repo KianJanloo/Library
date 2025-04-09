@@ -1,16 +1,21 @@
-'use client'
+"use client";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React from "react";
 
-const ButtonDeleteBook = ({ id }: { id: string }) => {
-
-  const router = useRouter()
+const ButtonDeleteBook = () => {
+  const params = useParams();
+  const { id } = params;
+  const router = useRouter();
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8000/Books/${id}`);
-      router.push('/library')
+      await axios.delete(`/api/posts`, {
+        data: {
+          id: id,
+        },
+      });
+      router.push("/library");
     } catch (error) {
       console.log(error);
     }
