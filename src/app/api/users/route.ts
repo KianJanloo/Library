@@ -22,9 +22,9 @@ export async function GET(req: Request) {
 
 export async function POST(req: Request) {
   const body = await req.json();
-  const { email, password } = body;
+  const { email, password, name } = body;
 
-  if (!email || !password) {
+  if (!email || !password || !name) {
     return NextResponse.json({ message: "Fields are empty!" }, { status: 415 });
   }
 
@@ -37,6 +37,7 @@ export async function POST(req: Request) {
     await prisma.user.create({
       data: {
         email,
+        name,
         password,
       },
     });
@@ -72,10 +73,10 @@ export async function DELETE(req: Request) {
 
 export async function PUT(req: Request) {
   const body = await req.json();
-  const { email, password } = body;
+  const { email, password, name } = body;
   const id = Number(body.id);
 
-  if (!id || !password || !email) {
+  if (!id || !password || !email || !name) {
     return NextResponse.json({ message: "Fields are empty!" }, { status: 400 });
   }
 
@@ -91,6 +92,7 @@ export async function PUT(req: Request) {
     data: {
       email,
       password,
+      name
     },
   });
   return NextResponse.json({ message: "User was updated!" }, { status: 200 });

@@ -30,7 +30,8 @@ const BookInfo = () => {
           alt={book?.name}
           className="w-48 h-64 hover:scale-[1.05] cursor-pointer transition-all duration-300 object-cover rounded-xl shadow-md mb-4"
         />
-        <h2 className="text-2xl font-bold mb-2">{book?.name}</h2>
+        <h2 className="text-2xl font-bold mb-2 text-black">{book?.name}</h2>
+        <p className="text-sm mb-3 text-black">by {book?.author.name}</p>
         <p className="text-gray-500 text-sm mb-3">{book?.describe}</p>
         <span className="text-lg font-semibold text-green-600">
           {book?.price}
