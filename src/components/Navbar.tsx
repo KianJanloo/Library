@@ -1,4 +1,5 @@
 "use client";
+import { parseCookies } from "nookies"
 import Image from "next/image";
 import Link from "next/link";
 import { redirect, usePathname } from "next/navigation";
@@ -9,8 +10,8 @@ const Navbar = () => {
   const [token, setToken] = useState<null | string>("");
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    setToken(token);
+    const cookies = parseCookies();
+    setToken(cookies.token || null)
   }, []);
 
   const roots = [
@@ -22,38 +23,40 @@ const Navbar = () => {
 
   return (
     <>
-      {pathName !== '/login' && <div className="flex p-4 justify-between">
-        <div className="flex gap-4">
-          {roots.map((item, index) => (
-            <Link
-              className={`${pathName === item.link ? "text-gray-300" : ""}`}
-              key={index}
-              href={item.link}
+      {pathName !== "/auth/login" && pathName !== "/auth/register" && (
+        <div className="flex p-4 justify-between">
+          <div className="flex gap-4">
+            {roots.map((item, index) => (
+              <Link
+                className={`${pathName === item.link ? "text-gray-300" : ""}`}
+                key={index}
+                href={item.link}
+              >
+                {" "}
+                {item.title}{" "}
+              </Link>
+            ))}
+          </div>
+          {token && (
+            <Image
+              className="rounded-full cursor-pointer bg-white"
+              height={40}
+              width={40}
+              src={""}
+              alt=""
+            />
+          )}
+          {!token && (
+            <div
+              onClick={() => redirect("/auth/login")}
+              className="bg-blue-500 cursor-pointer text-white rounded-full px-4 py-1"
             >
               {" "}
-              {item.title}{" "}
-            </Link>
-          ))}
+              Login{" "}
+            </div>
+          )}
         </div>
-        {token && (
-          <Image
-            className="rounded-full cursor-pointer bg-white"
-            height={40}
-            width={40}
-            src={""}
-            alt=""
-          />
-        )}
-        {!token && (
-          <div
-            onClick={() => redirect("/login")}
-            className="bg-blue-500 cursor-pointer text-white rounded-full px-4 py-1"
-          >
-            {" "}
-            Login{" "}
-          </div>
-        )}
-      </div>}
+      )}
     </>
   );
 };

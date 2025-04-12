@@ -9,40 +9,29 @@ export async function GET(req: Request) {
   if (id) {
     const user = await prisma.user.findFirst({
       where: { id },
-      include: {
-        books: true
-      }
+      select: {
+        email: true,
+        id: true,
+        name: true,
+        phone: true,
+        books: true,
+        password: false,
+      },
     });
     return NextResponse.json(user);
   }
 
-  const users = await prisma.user.findMany();
+  const users = await prisma.user.findMany({
+    select: {
+      email: true,
+      id: true,
+      name: true,
+      phone: true,
+      books: true,
+      password: false,
+    },
+  });
   return NextResponse.json(users);
-}
-
-export async function POST(req: Request) {
-  const body = await req.json();
-  const { email, password, name } = body;
-
-  if (!email || !password || !name) {
-    return NextResponse.json({ message: "Fields are empty!" }, { status: 415 });
-  }
-
-  const users = await prisma.user.findMany();
-  const existsEmail = users.find((user) => user.email == email);
-
-  if (existsEmail) {
-    return NextResponse.json({ message: "Email is repeat!" }, { status: 400 });
-  } else {
-    await prisma.user.create({
-      data: {
-        email,
-        name,
-        password,
-      },
-    });
-    return NextResponse.json({ message: "User was created!" }, { status: 200 });
-  }
 }
 
 export async function DELETE(req: Request) {
@@ -62,9 +51,9 @@ export async function DELETE(req: Request) {
 
   await prisma.books.deleteMany({
     where: {
-      authorId: id
-    }
-  })
+      authorId: id,
+    },
+  });
   await prisma.user.delete({
     where: { id },
   });
@@ -73,7 +62,7 @@ export async function DELETE(req: Request) {
 
 export async function PUT(req: Request) {
   const body = await req.json();
-  const { email, password, name } = body;
+  const { email, password, name, phone } = body;
   const id = Number(body.id);
 
   if (!id || !password || !email || !name) {
@@ -86,13 +75,14 @@ export async function PUT(req: Request) {
   if (!existsID) {
     return NextResponse.json({ message: "ID is not found!" }, { status: 400 });
   }
-  
+
   await prisma.user.update({
     where: { id },
     data: {
       email,
       password,
-      name
+      name,
+      phone,
     },
   });
   return NextResponse.json({ message: "User was updated!" }, { status: 200 });
